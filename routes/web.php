@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +31,14 @@ Route::get('/', function () {
 // Modifikasi Route jika ada class controller
 Route::get('/hello', [WelcomeController::class,'hello']);
 Route::get('/index', [PageController::class,'index']);
-Route::get('/about', [PageController::class,'about']);
-Route::get('/articles', [PageController::class,'articles']);
+// Route::get('/about', [PageController::class,'about']);
+// Route::get('/articles', [PageController::class,'articles']);
+
+// Modifikasi dengan konsep Single Action Controller
+Route::get('/home', [HomeController::class,'home']);
+Route::get('/about', [AboutController::class,'about']);
+Route::get('/articles/{id}', [ArticleController::class,'articles']);
+
 
 Route::get ('/world', function () {
     return 'World';
