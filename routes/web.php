@@ -60,3 +60,8 @@ Route::get ('/user/{name?}', function ($name=null) {
 Route::get ('/user/{name?}', function ($name='John') {
     return 'Nama saya '.$name;
 });
+
+// Route Name
+Route::get ('/user/profile', function () {
+    //
+})->name('profile');
