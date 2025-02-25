@@ -51,10 +51,12 @@ Route::get ('/articles/{id}', function ($Id) {
 
 // Optional Parameter
 
+// Memasukkan parameternya di URL
 Route::get ('/user/{name?}', function ($name=null) {
     return 'Nama saya '.$name;
 });
 
-// Route::get ('/user/{name?}', function ($name='John') {
-//     return 'Nama saya '.$name;
-// });
+// Parameter sudah ditentukan di routes
+Route::get ('/user/{name?}', function ($name='John') {
+    return 'Nama saya '.$name;
+});
