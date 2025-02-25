@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +25,11 @@ Route::get('/', function () {
 //     return 'Hello World';
 // });
 
-// Jika ada class controller
+// Modifikasi Route jika ada class controller
 Route::get('/hello', [WelcomeController::class,'hello']);
+Route::get('/index', [PageController::class,'index']);
+Route::get('/about', [PageController::class,'about']);
+Route::get('/articles', [PageController::class,'articles']);
 
 Route::get ('/world', function () {
     return 'World';
@@ -35,9 +39,9 @@ Route::get ('/welcome', function () {
     return 'Selamat Datang';
 });
 
-Route::get ('/about', function () {
-    return 'NIM 2341720100 <br> Dewita Anggraini';
-});
+// Route::get ('/about', function () {
+//     return 'NIM 2341720100 <br> Dewita Anggraini';
+// });
 
 //Parameter Route
 
@@ -49,9 +53,9 @@ Route::get ('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
     return 'Pos ke- '.$postId." Komentar ke-: ".$commentId;
 });
 
-Route::get ('/articles/{id}', function ($Id) {
-    return 'Halaman artikel dengan ID '.$Id;
-});
+// Route::get ('/articles/{id}', function ($Id) {
+//     return 'Halaman artikel dengan ID '.$Id;
+// });
 
 // Optional Parameter
 
